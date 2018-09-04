@@ -1,0 +1,19 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1535984854610'); /* IE9*/
+  src: url('iconfont.eot?t=1535984854610#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff;charset=utf-8;base64,d09GRgABAAAAAAR0AAsAAAAABtwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABCAAAADMAAABCsP6z7U9TLzIAAAE8AAAARAAAAFY9WEjUY21hcAAAAYAAAABLAAABcOgKuFBnbHlmAAABzAAAALYAAADcP5BWZGhlYWQAAAKEAAAALwAAADYShg+FaGhlYQAAArQAAAAcAAAAJAfeA4NobXR4AAAC0AAAAAgAAAAICAAAAGxvY2EAAALYAAAABgAAAAYAbgAAbWF4cAAAAuAAAAAgAAAAIAEQAFduYW1lAAADAAAAAUUAAAJtPlT+fXBvc3QAAARIAAAAKQAAADqdwbCxeJxjYGRgYOBikGPQYWB0cfMJYeBgYGGAAJAMY05meiJQDMoDyrGAaQ4gZoOIAgCKIwNPAHicY2BkYWCcwMDKwMHUyXSGgYGhH0IzvmYwYuRgYGBiYGVmwAoC0lxTGByePXr2iLnhfwNDDHMDQwNQmBEkBwAAhA2neJxjYGBgZWBgYAZiHSBmYWBgDGFgZAABP6AoI1icmYELLM7CoARWwwISf/bo/38YCeSzgEkGRjaGUcADJmWgPHBYQTADIwBRrAzxAHicY2BhYPj/h3kB0wMGbgZxBmUGLwYGRmUlNhExa0YjMxM1dWS2MYjUZgSJCOsxqpuZm5mbAoXVlPkY2UXlGMWBFB+jLKO4HKOxopGZPaOJGnNDA5+QEB8q0QdnybAX+gvxKjKqKelZeaUwMaooeGeyickysSuLMdlIqTAzyjAeEJIBqhNqgFAOEOpfA4uWIJ+wnmWmlpeUElOyd6a2u6SgBjOnlmQLq6ikgmSduDYDAwBFKyFyAAB4nGNgZGBgAGKjvIl18fw2Xxm4WRhA4Prm1GsI+v8fFgamB0AuBwMTSBQAPtYL1QB4nGNgZGBgbvjfwBDDwgACQJKRARUwAQBHCAJrBAAAAAQAAAAAAAAAAG4AAAABAAAAAgBLAAQAAAAAAAIAAAAKAAoAAAD/AAAAAAAAeJxlj01OwzAQhV/6B6QSqqhgh+QFYgEo/RGrblhUavdddN+mTpsqiSPHrdQDcB6OwAk4AtyAO/BIJ5s2lsffvHljTwDc4Acejt8t95E9XDI7cg0XuBeuU38QbpBfhJto41W4Rf1N2MczpsJtdGF5g9e4YvaEd2EPHXwI13CNT+E69S/hBvlbuIk7/Aq30PHqwj7mXle4jUcv9sdWL5xeqeVBxaHJIpM5v4KZXu+Sha3S6pxrW8QmU4OgX0lTnWlb3VPs10PnIhVZk6oJqzpJjMqt2erQBRvn8lGvF4kehCblWGP+tsYCjnEFhSUOjDFCGGSIyujoO1Vm9K+xQ8Jee1Y9zed0WxTU/3OFAQL0z1xTurLSeTpPgT1fG1J1dCtuy56UNJFezUkSskJe1rZUQuoBNmVXjhF6XNGJPyhnSP8ACVpuyAAAAHicY2BigAAuBuyAiZGJkZlBIDElpSi1uDgpPz87Pi0zJ4eBAQBJgQa9AAAA') format('woff'),
+  url('iconfont.ttf?t=1535984854610') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1535984854610#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-addressbook_fill:before { content: "\e6e2"; }
+

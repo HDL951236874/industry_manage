@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java456.dao.UserDao">
+	
+	<resultMap type="User" id="UserResult">
+		<result property="id" column="id" />
+		<result property="userId" column="userId" />
+		<result property="fullname" column="fullname" />
+		<result property="account" column="account" />
+		<result property="password" column="password" />
+		<result property="isExpired" column="isExpired" />
+		<result property="isLock" column="isLock" />
+		<result property="createtime" column="createtime" />
+		<result property="status" column="status" />
+		<result property="email" column="email" />
+		<result property="mobile" column="mobile" />
+		<result property="phone" column="phone" />
+		<result property="sex" column="sex" />
+		<result property="picture" column="picture" />
+		<result property="FROMTYPE" column="FROMTYPE" />
+		<result property="orgId" column="orgId" />
+		<result property="orgSn" column="orgSn" />
+		<result property="shortAccount" column="shortAccount" />
+		<result property="orgType" column="orgType" />
+		<result property="typeId" column="typeId" />
+		<result property="typeName" column="typeName" />
+		<result property="code" column="code" />
+		<result property="refCode" column="refCode" />
+		<result property="security_level" column="security_level" />
+		<result property="menuIds" column="menuIds" />
+		<result property="isApply" column="isApply" />
+		<result property="openId" column="openId" />
+	</resultMap>
+	
+	<insert id="add" parameterType="User">
+		insert into sys_user 
+		(userId,fullname,account,password,isExpired,isLock,createtime,status,email
+		,mobile,phone,sex,picture,FROMTYPE,orgId,orgSn,shortAccount,orgType,typeId,typeName,code,refCode
+		,security_level,menuIds,isApply,openId)
+		values(#{userId},#{fullname},#{account},#{password},#{isExpired},#{isLock},#{createtime},#{status},#{email}
+		,#{mobile},#{phone},#{sex},#{picture},#{FROMTYPE},#{orgId},#{orgSn},#{shortAccount},#{orgType},#{typeId},#{typeName},#{code},#{refCode}
+		,#{security_level},#{menuIds},#{isApply},#{openId})
+	</insert>
+	
+	<update id="update" parameterType="User">
+		update sys_user
+		<set>
+			<if test="userId!=null  ">
+				userId=#{userId},
+			</if>
+			<if test="fullname!=null and fullname!=''  ">
+				fullname=#{fullname},
+			</if>
+			<if test="account!=null and account!=''  ">
+				account=#{account},
+			</if>
+			<if test="password!=null and password!=''  ">
+				password=#{password},
+			</if>
+			<if test="isExpired!=null and isExpired!=''  ">
+				isExpired=#{isExpired},
+			</if>
+			<if test="isLock!=null and isLock!=''  ">
+				isLock=#{isLock},
+			</if>
+			<if test="createtime!=null and createtime!=''  ">
+				createtime=#{createtime},
+			</if>
+			<if test="status!=null and status!=''  ">
+				status=#{status},
+			</if>
+			<if test="email!=null and email!=''  ">
+				email=#{email},
+			</if>
+			<if test="mobile!=null and mobile!=''  ">
+				mobile=#{mobile},
+			</if>
+			<if test="phone!=null and phone!=''  ">
+				phone=#{phone},
+			</if>
+			<if test="sex!=null and sex!=''  ">
+				sex=#{sex},
+			</if>
+			<if test="picture!=null and picture!=''  ">
+				picture=#{picture},
+			</if>
+			<if test="FROMTYPE!=null and FROMTYPE!=''  ">
+				FROMTYPE=#{FROMTYPE},
+			</if>
+			<if test="orgId!=null and orgId!=''  ">
+				orgId=#{orgId},
+			</if>
+			<if test="orgSn!=null and orgSn!=''  ">
+				orgSn=#{orgSn},
+			</if>
+			<if test="shortAccount!=null and shortAccount!=''  ">
+				shortAccount=#{shortAccount},
+			</if>
+			<if test="orgType!=null and orgType!=''  ">
+				orgType=#{orgType},
+			</if>
+			<if test="typeId!=null and typeId!=''  ">
+				typeId=#{typeId},
+			</if>
+			<if test="typeName!=null and typeName!=''  ">
+				typeName=#{typeName},
+			</if>
+			<if test="code!=null and code!=''  ">
+				code=#{code},
+			</if>
+			<if test="refCode!=null and refCode!=''  ">
+				refCode=#{refCode},
+			</if>
+			<if test="security_level!=null and security_level!=''  ">
+				security_level=#{security_level},
+			</if>
+			<if test="menuIds!=null and menuIds!=''  ">
+				menuIds=#{menuIds},
+			</if>
+			<if test="isApply!=null and isApply!=''  ">
+				isApply=#{isApply},
+			</if>
+			<if test="openId!=null and openId!=''  ">
+				openId=#{openId},
+			</if>
+		</set>
+		where id=#{id}
+	</update>
+	
+	
+	<select id="list" parameterType="Map" resultMap="UserResult">
+		select * from sys_user
+		<where>
+			<if test="q!=null and q!=''">
+				and (fullname like #{q}  or account like #{q}  or orgSn like #{q}) 
+			</if>
+			<if test="date1!=null and date1!='' ">
+		 		and createtime &gt; #{date1} 
+			</if>
+			<if test="date2!=null and date2!='' ">
+		 		and createtime &lt;  #{date2} 
+			</if>
+		</where>
+		order by id ASC
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<select id="getTotal" parameterType="Map" resultType="Integer">
+		select count(*) from sys_user
+		<where>
+			<if test="q!=null and q!=''">
+				and (fullname like #{q}  or account like #{q}  or orgSn like #{q}) 
+			</if>
+			<if test="date1!=null and date1!='' ">
+		 		and createtime &gt; #{date1} 
+			</if>
+			<if test="date2!=null and date2!='' ">
+		 		and createtime &lt;  #{date2} 
+			</if>
+		</where>
+	</select>
+	
+	<select id="findById" parameterType="Integer" resultMap="UserResult">
+		select * from sys_user where id=#{id}
+	</select>
+	
+	<select id="findByAccount" parameterType="String" resultMap="UserResult">
+		select * from sys_user where account=#{account}
+	</select>
+	
+	<delete id="delete" parameterType="Integer">
+		delete from sys_user where id=#{id}
+	</delete>
+	
+</mapper> 
